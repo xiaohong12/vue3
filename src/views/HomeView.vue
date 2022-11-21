@@ -1,6 +1,19 @@
-<script setup lang="ts">
+<template>
+    <div>
+        8888888
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    setup () {
+        return {}
+    }
+})
 </script>
 
-<template>
-9999999
-</template>
+<style scoped>
+
+</style>

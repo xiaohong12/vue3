@@ -1,17 +1,15 @@
 <template>
-  <div>
-123456
-  </div>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-export default defineComponent({
-  setup () {
-    return {}
-  }
-})
+// export default defineComponent({
+//   setup () {
+//     return {}
+//   }
+// })
 </script>
 
 <style scoped>
