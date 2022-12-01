@@ -1,9 +1,13 @@
+:root {
+  --el-color-primary: #10c2d2 !important;
+}
 html,body,#app{
 height: 100vh;
 width: 100%;
 margin: 0px;
 padding: 0px;
 }
+
 .el-menu-item.is-active{
     background-color: #10c2d2 !important;
   }
@@ -11,3 +15,12 @@ padding: 0px;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
+  
+  .el-button--primary {
+    --el-button-hover-bg-color: #36cad7  !important;
+    --el-button-hover-border-color: #36cad7  !important;
+    --el-button-active-color: #36cad7  !important;
+    --el-button-active-bg-color: #36cad7  !important;
+    --el-button-outline-color: #36cad7  !important;
+    --el-button-active-border-color: #36cad7  !important;
+}

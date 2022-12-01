@@ -5,7 +5,7 @@
 {{datas.age}}
 {{msg}}
 {{datas.searchText}}
-<el-button @click="changeName" >点击</el-button>
+<el-button @click="changeName" type="primary" >点击</el-button>
 
     </div>
 </template>
