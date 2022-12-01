@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import './global.scss'
 import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
@@ -6,6 +7,7 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import ElementPlus from 'element-plus'
 //@ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.min.mjs'
+
 
 const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

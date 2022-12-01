@@ -4,6 +4,9 @@
     class="el-menu-demo"
     mode="horizontal"
     collapse-transition
+    background-color='#292b4d'
+    text-color='hsla(0,0%,100%,.65)'
+    active-text-color='#fff'
   >
   <template v-for="(item ,key) in routes"
     v-bind:key="key">

@@ -1,0 +1,13 @@
+html,body,#app{
+height: 100vh;
+width: 100%;
+margin: 0px;
+padding: 0px;
+}
+.el-menu-item.is-active{
+    background-color: #10c2d2 !important;
+  }
+  .el-menu.el-menu--popup{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
