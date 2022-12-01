@@ -1,52 +1,85 @@
 <template>
-     <el-button-group>
-    <el-button type="primary" :icon="ArrowLeft" @click="changeName">{{data?.name}}</el-button>
-      <el-button type="primary" v-for="(item,index) in list" v-bind:key="index" @click="addItem(index)" >
-      {{item}}
-    </el-button>
-    <el-input v-model="data.inputValue" placeholder="Please input" :style="{marginTop:'20px'}" ref="inputs"/>
-    <el-input v-model="ss" placeholder="Please input" :style="{marginTop:'20px'}" v-show="isShow"/>
-  </el-button-group>
+  <div class="demo-datetime-picker">
+    <div class="block">
+      <span class="demonstration">Default</span>
+      <el-date-picker
+        v-model="value1"
+        type="datetime"
+        placeholder="Select date and time"
+      />
+    </div>
+    <div class="block">
+      <span class="demonstration">With shortcuts</span>
+      <el-date-picker
+        v-model="value2"
+        type="datetime"
+        placeholder="Select date and time"
+        :shortcuts="shortcuts"
+      />
+    </div>
+    <div class="block">
+      <span class="demonstration">With default time</span>
+      <el-date-picker
+        v-model="value3"
+        type="datetime"
+        placeholder="Select date and time"
+        :default-time="defaultTime"
+      />
+    </div>
+  </div>
 </template>
 
-<script lang="ts" setup >
-import { computed, defineComponent, onMounted, toRefs } from 'vue'
-import { reactive,ref,watch} from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  Delete,
-  Edit,
-  Share,
-} from '@element-plus/icons-vue'
-      //定义基本类型为引用数据
-      const data=reactive({
-        name:'xiaohong',
-        inputValue:20
-      });
-      const inputs = ref(null)
-      const isShow=$ref(false)
-      //定义引用类型为响应数据
-      const list=$ref([1,2,3,4])
-      const changeName=()=>{
-        data.name=new Date().valueOf()+'xiaohong'
-      }
-      const addItem=(index)=>{
-         list.push(list.length+1)
-      }
-       //计算属性
-      const ss=computed(()=>{
-         return  data.inputValue* Math.random(1)*100
-      })
-      
-      //监听
-      const dd=watch(()=>data.inputValue,(newData,oldData)=>{
-        isShow=!isShow
-      })
+const value1 = ref('')
+const value2 = ref('')
+const value3 = ref('')
+const defaultTime = new Date(2000, 1, 1, 12, 0, 0)
 
+const shortcuts = [
+  {
+    text: 'Today',
+    value: new Date(),
+  },
+  {
+    text: 'Yesterday',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24)
+      return date
+    },
+  },
+  {
+    text: 'A week ago',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+      return date
+    },
+  },
+]
 </script>
-
 <style scoped>
-
+.demo-datetime-picker {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.demo-datetime-picker .block {
+  padding: 30px 0;
+  text-align: center;
+  border-right: solid 1px var(--el-border-color);
+  flex: 1;
+}
+.demo-datetime-picker .block:last-child {
+  border-right: none;
+}
+.demo-datetime-picker .demonstration {
+  display: block;
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
 </style>
