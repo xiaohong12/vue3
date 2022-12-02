@@ -26,10 +26,14 @@ padding: 0px;
     --el-button-active-bg-color: #36cad7  !important;
     --el-button-outline-color: #36cad7  !important;
     --el-button-active-border-color: #36cad7  !important;
+
 }
 .el-menu--horizontal>.el-sub-menu.is-active .el-sub-menu__title{
   border-bottom:3.5px solid  var(--el-color-primary) !important
 }
 .el-menu--horizontal>.el-sub-menu .el-sub-menu__title{
   border-bottom:3.5px solid #292b4d  !important
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+    background-color: #292b4d !important;
 }
