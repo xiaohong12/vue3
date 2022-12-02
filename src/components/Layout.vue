@@ -8,7 +8,7 @@
     text-color='hsla(0,0%,100%,.65)'
     active-text-color='#fff'
   >
-  <template v-for="(item ,key) in routes"
+  <template v-for="(item ,key) in routes[0]?.children"
     v-bind:key="key">
     <SubMenuItem :list="item" v-if="item?.children?.length>0" ></SubMenuItem>
     <el-menu-item :index="item.path" v-if="item?.children?.length<=0" @click="clickRouter(item)">{{item?.name}}</el-menu-item>
@@ -29,7 +29,7 @@ import useMenueRouterStore from '@stores/menueRouter'
 //只能解析state 不能解析方法  方法需要单独调用
 const store=useMenueRouterStore();
 const {activeIndex}=storeToRefs(useMenueRouterStore()) 
-
+console.log(routes[0])
 const clickRouter=(item)=>{
   store.navationToPage(item)
 }

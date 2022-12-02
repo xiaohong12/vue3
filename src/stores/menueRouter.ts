@@ -5,7 +5,7 @@ import { defineStore, mapActions } from "pinia";
  const useMenueRouterStore = defineStore("menueRouter", () => {
 
   const router=useRouter()
-  const activeIndex = ref('/transfers');
+  const activeIndex = ref('/home');
   
   const navationToPage=(item:{path:string})=>{
     activeIndex.value=item?.path
